@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mahjong Mini — Support</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* This page only: a friendlier look on the site's jade colours (the legal pages keep theirs). */
+    header.site { padding: 36px 20px 64px; }
+    header.site h1 { font-size: 2rem; }
+    .hero {
+      position: relative;
+      margin: -44px 0 22px;
+      text-align: center;
+      padding: 30px 26px 26px;
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(31, 107, 84, .12);
+    }
+    .tile {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 60px; height: 76px; margin-bottom: 10px;
+      background: #fffdf6; border: 2px solid var(--rule); border-radius: 12px;
+      box-shadow: 0 4px 0 #d8e3de;
+      font-size: 2.3rem; color: #c8382e; font-weight: 700;
+      transform: rotate(-4deg);
+    }
+    .hero h2 { border: 0; margin: 4px 0 6px; padding: 0; font-size: 1.5rem; }
+    .hero p { margin: 6px auto; max-width: 520px; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .grid .card { margin: 0; }
+    .card h3 { margin: 0 0 8px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; }
+    .card h3 .icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 30px; height: 30px; border-radius: 50%;
+      background: #e6f3ee; color: var(--jade-dark); font-size: 1rem;
+    }
+    .button {
+      display: inline-block; margin-top: 8px; padding: 11px 22px;
+      background: var(--jade); color: #fff; border-radius: 999px;
+      font-weight: 700; text-decoration: none;
+      box-shadow: 0 3px 0 var(--jade-dark);
+      transition: transform .08s ease, box-shadow .08s ease;
+    }
+    .button:hover { background: var(--jade-dark); }
+    .button:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--jade-dark); }
+    .button.soft { background: #e6f3ee; color: var(--jade-dark); box-shadow: 0 3px 0 #cfe5dc; }
+    .button.soft:hover { background: #d8ece4; }
+    .email { display: block; margin-top: 10px; font-size: .92rem; color: var(--muted); word-break: break-all; }
+    .tips { margin: 6px 0 0; padding: 0; list-style: none; }
+    .tips li { padding-left: 26px; position: relative; margin: 8px 0; }
+    .tips li::before {
+      content: "✓"; position: absolute; left: 0; top: 0;
+      color: var(--jade); font-weight: 700;
+    }
+    .privacy { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 18px; }
+    .privacy p { margin: 4px 0 0; color: var(--muted); }
+    footer.site { text-align: center; }
+    footer.site strong { color: var(--ink); }
+    @media (max-width: 620px) {
+      .grid { grid-template-columns: 1fr; }
+      .privacy { flex-direction: column; align-items: flex-start; }
+      header.site h1 { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <div class="brand">Mahjong Mini</div>
+      <h1>Support</h1>
+      <div class="toplinks"><a href="index.html">Home</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></div>
+    </div>
+  </header>
+  <main>
+    <div class="card hero">
+      <div class="tile" aria-hidden="true">中</div>
+      <h2>Need a hand? We're here to help!</h2>
+      <p>Whether you've run into a bug, have a question, or just want to share some feedback, we'd love to hear from you.</p>
+      <p>We're a tiny indie team, so we appreciate your patience while we get back to you!</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3><span class="icon" aria-hidden="true">✉</span>Contact us</h3>
+        <p>Questions, ideas or anything that seems off: drop us a line.</p>
+        <a class="button" href="mailto:dumplingfishgames@gmail.com?subject=Mahjong%20Mini%20support">Email us</a>
+        <span class="email">dumplingfishgames@gmail.com</span>
+      </div>
+      <div class="card">
+        <h3><span class="icon" aria-hidden="true">🐞</span>Reporting a bug?</h3>
+        <ul class="tips">
+          <li>A brief description of the issue</li>
+          <li>A screenshot, if possible</li>
+          <li>Where you play: iPhone, the web or Discord</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card privacy">
+      <div>
+        <h3><span class="icon" aria-hidden="true">🔒</span>Privacy Policy</h3>
+        <p>Want to know how we handle your information?</p>
+      </div>
+      <a class="button soft" href="privacy.html">View our Privacy Policy</a>
+    </div>
+  </main>
+  <footer class="site">
+    <strong>Mahjong Mini</strong> by dumplingfish<br>
+    &copy; 2026 dumplingfish. All rights reserved.
+  </footer>
+</body>
+</html>
