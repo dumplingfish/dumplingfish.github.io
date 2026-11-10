@@ -249,15 +249,9 @@ a:hover { color: var(--green-dark); }
 .shelf { padding: 64px 0 34px; }
 .shelf + .shelf { padding-top: 34px; }
 .shelf-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px 20px; margin-bottom: 24px; }
-.shelf-head h2 { display: flex; align-items: center; gap: 14px; margin: 0; font: 700 clamp(1.8rem, 4vw, 2.5rem)/1.15 var(--display); color: var(--brown); }
+.shelf-head h2 { margin: 0; font: 700 clamp(1.8rem, 4vw, 2.5rem)/1.15 var(--display); color: var(--brown); }
 .shelf-head .more { font: 700 1.02rem/1.3 var(--display); color: var(--green); text-decoration: none; }
 .shelf-head .more:hover { text-decoration: underline; }
-.roundel {
-  flex: none; display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%;
-  background: var(--navy); border: 4px solid #fff8ea; box-shadow: 0 4px 0 #122a4b;
-}
-.roundel.green { background: var(--green-bright); box-shadow: 0 4px 0 var(--green-dark); }
-.roundel img { width: 24px; height: 24px; object-fit: contain; }
 
 /* The game panel: the game's own cream panel with a solid lip, its art on felt beside it */
 .game-tile {
@@ -334,6 +328,8 @@ a:hover { color: var(--green-dark); }
   transition: transform .12s ease;
 }
 .help-card:hover { transform: translateY(-3px); color: #2b1f16; }
+.help-card .sticker { flex: none; width: 54px; height: 54px; object-fit: contain; filter: drop-shadow(0 3px 3px rgba(74, 52, 38, .18)); }
+.help-card .sticker.face { border-radius: 50%; }
 .help-card strong { display: block; font: 700 1.2rem/1.2 var(--display); }
 .help-card .sub { display: block; margin-top: 2px; font: 600 .92rem/1.35 var(--display); color: #6b5a4a; overflow-wrap: anywhere; }
 @media (max-width: 860px) { .help-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
