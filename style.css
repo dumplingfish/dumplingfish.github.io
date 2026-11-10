@@ -208,43 +208,41 @@ a:hover { color: var(--green-dark); }
 .phone img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 26px; background: #efe3cf; }
 .avatar { width: 92px; height: 92px; border-radius: 50%; border: 5px solid #ffd54a; box-shadow: 0 10px 18px rgba(20, 16, 50, .35); }
 
-/* ---------- Home: the featured game ---------- */
+/* ---------- Home: the studio, with the way to play up front ---------- */
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-.marquee .wrap { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 24px; min-height: 540px; padding-top: 40px; padding-bottom: 70px; }
-.ribbon {
-  display: inline-flex; align-items: center; gap: 8px; margin: 0 0 16px; padding: 8px 18px 8px 10px;
-  border-radius: 999px; background: var(--gold); color: #4a3426; box-shadow: 0 4px 0 #d99a12;
-  font: 700 .95rem/1.2 var(--display); letter-spacing: .8px; text-transform: uppercase;
-}
-.ribbon img { width: 22px; height: 22px; }
-.marquee .logo { margin: 0; line-height: 0; }
-.marquee .logo img { width: min(440px, 100%); filter: drop-shadow(0 8px 14px rgba(10, 60, 30, .3)); }
-.pitch { font: 700 clamp(1.35rem, 2.4vw, 1.7rem)/1.3 var(--display); margin: 16px 0 6px; color: #fff8ea; }
-.pitch-sub { font: 600 1.12rem/1.5 var(--display); margin: 0 0 18px; color: #e6f7ec; max-width: 30em; }
-.rules { list-style: none; margin: 0 0 28px; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
-.rules li { font: 700 .95rem/1.2 var(--display); color: #4a3426; background: #fff8ea; padding: 8px 14px; border-radius: 14px; box-shadow: 0 4px 0 rgba(0, 0, 0, .18); }
 .btn .icon { width: 20px; height: 20px; object-fit: contain; }
 .btn.big { font-size: 1.45rem; padding: 18px 36px 18px 30px; border-width: 4px; gap: 12px; }
 .btn.big .icon { width: 26px; height: 26px; }
-.free { font: 600 1rem/1.3 var(--display); color: #e6f7ec; }
-.marquee-art { position: relative; height: 480px; }
-.marquee-art .halo { position: absolute; left: 50%; top: 50%; width: 420px; height: 420px; translate: -50% -50%; border-radius: 50%; background: radial-gradient(circle, rgba(255, 236, 160, .45), rgba(255, 236, 160, 0) 68%); }
-.marquee-art .phone { position: absolute; right: 22%; top: 50%; translate: 0 -50%; width: 214px; }
-.marquee-art .bao { position: absolute; z-index: 3; left: 6%; bottom: 2%; width: 220px; filter: drop-shadow(0 16px 20px rgba(10, 60, 30, .35)); }
+.nav a.btn .icon { width: 15px; height: 15px; }
+
+.studio-hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 24px; min-height: 540px; padding-top: 44px; padding-bottom: 72px; }
+.studio-hero h1 { margin: 0 0 12px; font-size: clamp(3.1rem, 7.6vw, 5.6rem); }
+.motto { margin: 0 0 16px; font: 700 clamp(1.45rem, 3vw, 2.1rem)/1.2 var(--display); color: var(--gold); text-shadow: 0 3px 0 rgba(43, 31, 22, .35); }
+.studio-hero .lead { margin: 0 0 28px; max-width: 31em; font: 600 1.15rem/1.55 var(--display); color: #e6f7ec; }
+
+/* The way to play: a big button and the address it goes to, together in one cream-rimmed tray */
+.playroute {
+  display: inline-flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; padding: 14px 22px 14px 14px;
+  border-radius: 999px; background: rgba(10, 60, 30, .28); border: 3px solid rgba(255, 248, 234, .4);
+}
+.route { display: inline-flex; align-items: center; gap: 10px; color: #fff8ea; text-decoration: none; font: 700 1.2rem/1.2 var(--display); }
+.route small { display: block; font: 600 .82rem/1.2 var(--display); color: #bfe9cf; letter-spacing: .4px; }
+.route:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+
+.studio-art { position: relative; height: 470px; }
+.studio-art .halo { position: absolute; left: 50%; top: 50%; width: 440px; height: 440px; translate: -50% -50%; border-radius: 50%; background: radial-gradient(circle, rgba(255, 236, 160, .5), rgba(255, 236, 160, 0) 68%); }
+.studio-art .mark-big { position: absolute; left: 50%; top: 50%; width: min(330px, 76%); translate: -50% -50%; filter: drop-shadow(0 18px 22px rgba(10, 60, 30, .35)); }
+.studio-art .avatar { width: 84px; height: 84px; }
+.studio-art .bubble { width: 38px; }
 @media (max-width: 860px) {
-  .marquee .wrap { grid-template-columns: 1fr; gap: 0; min-height: 0; padding-top: 16px; padding-bottom: 52px; text-align: center; }
-  /* Phones: the Play button straight after the pitch, the rule sets under it. */
-  .marquee .copy { order: 1; display: flex; flex-direction: column; align-items: center; }
-  .marquee .actions { order: 1; flex-direction: column; gap: 10px; }
-  .marquee .rules { order: 2; margin: 24px 0 0; }
-  .marquee .logo img { width: min(320px, 88%); }
-  .pitch-sub { margin-left: auto; margin-right: auto; }
-  .rules, .marquee .actions { justify-content: center; }
-  .marquee-art { height: 280px; }
-  .marquee-art .halo { width: 300px; height: 300px; }
-  .marquee-art .phone { width: 128px; right: 24%; }
-  .marquee-art .bao { width: 130px; left: 16%; }
-  .marquee-art .tileart { width: 56px; }
+  .studio-hero .wrap { grid-template-columns: 1fr; gap: 0; min-height: 0; padding-top: 12px; padding-bottom: 54px; text-align: center; }
+  .studio-hero .lead { margin-left: auto; margin-right: auto; }
+  .studio-art { height: 270px; order: -1; }
+  .studio-art .halo { width: 300px; height: 300px; }
+  .studio-art .mark-big { width: 200px; }
+  .studio-art .avatar { width: 58px; height: 58px; border-width: 4px; }
+  .studio-art .tileart { width: 52px; }
+  .playroute { flex-direction: column; border-radius: 30px; padding: 18px 22px; }
 }
 
 /* ---------- Home: shelves ---------- */
@@ -276,7 +274,8 @@ a:hover { color: var(--green-dark); }
 .cover .tileart { width: 15%; border-radius: 8px; }
 .cover .twinkle { width: 20px; }
 .tile-body { display: flex; flex-direction: column; justify-content: center; gap: 12px; padding: 32px 38px; }
-.tile-body h3 { margin: 0; font: 700 2.2rem/1.1 var(--display); color: var(--brown); }
+.tile-body h3 { margin: 0; line-height: 0; }
+.tile-body h3 img { width: min(300px, 100%); filter: drop-shadow(0 4px 6px rgba(74, 52, 38, .18)); }
 .tagline { margin: 0; font: 600 1.15rem/1.35 var(--display); color: var(--red); }
 .blurb { margin: 0; font: 600 1.05rem/1.55 var(--display); color: var(--muted); }
 .tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
@@ -288,7 +287,6 @@ a:hover { color: var(--green-dark); }
   .game-tile { grid-template-columns: 1fr; }
   .cover { min-height: 0; aspect-ratio: 4 / 3; }
   .tile-body { padding: 24px 22px 26px; }
-  .tile-body h3 { font-size: 1.9rem; }
 }
 
 /* Inside Mahjong Mini: the ads as a gallery */
