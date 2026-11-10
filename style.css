@@ -261,53 +261,34 @@ a:hover { color: var(--green-dark); }
 .roundel.green { background: var(--green-bright); box-shadow: 0 4px 0 var(--green-dark); }
 .roundel img { width: 24px; height: 24px; object-fit: contain; }
 
-/* Game tiles: the game's own cream panels with a solid lip */
-.game-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+/* The game panel: the game's own cream panel with a solid lip, its art on felt beside it */
 .game-tile {
-  display: flex; flex-direction: column; overflow: hidden;
+  display: grid; grid-template-columns: 46% 1fr; overflow: hidden;
   background: var(--paper); border-radius: 28px;
   box-shadow: 0 7px 0 var(--lip), 0 20px 34px var(--shadow);
-  transition: transform .15s ease;
 }
-.game-tile:hover { transform: translateY(-4px); }
-.cover { position: relative; display: grid; place-items: center; aspect-ratio: 4 / 3; overflow: hidden; isolation: isolate; text-decoration: none; }
-.cover.felt { background: radial-gradient(120% 100% at 40% 35%, var(--felt-glow), var(--felt) 72%); }
-.cover.night { background: radial-gradient(110% 100% at 60% 40%, var(--night-glow), var(--night) 72%); }
-.cover.mint { background: radial-gradient(120% 100% at 40% 35%, var(--mint-glow), var(--mint) 72%); }
-.cover .app-icon { position: relative; z-index: 2; width: 44%; border-radius: 24%; rotate: -5deg; box-shadow: 0 8px 0 rgba(0, 0, 0, .2), 0 18px 28px rgba(0, 0, 0, .25); transition: rotate .2s ease, scale .2s ease; }
-.game-tile:hover .app-icon { rotate: 0deg; scale: 1.05; }
-.cover .tileart { width: 16%; border-radius: 8px; }
+.cover {
+  position: relative; display: grid; place-items: center; min-height: 360px; overflow: hidden; isolation: isolate;
+  text-decoration: none; background: radial-gradient(120% 100% at 40% 35%, var(--felt-glow), var(--felt) 72%);
+}
+.cover .app-icon { position: relative; z-index: 2; width: min(46%, 220px); border-radius: 24%; rotate: -5deg; box-shadow: 0 8px 0 rgba(0, 0, 0, .2), 0 18px 28px rgba(0, 0, 0, .25); transition: rotate .2s ease, scale .2s ease; }
+.cover:hover .app-icon, .cover:focus-visible .app-icon { rotate: 0deg; scale: 1.05; }
+.cover .tileart { width: 15%; border-radius: 8px; }
 .cover .twinkle { width: 20px; }
-.mystery {
-  position: relative; z-index: 2; display: grid; place-items: center; width: 30%; aspect-ratio: 556 / 776;
-  background: #fffdf6; border: 5px solid #e2d2b6; border-radius: 14px; rotate: 5deg;
-  font: 700 clamp(2.6rem, 6vw, 4rem)/1 var(--display); color: var(--navy);
-  box-shadow: 0 7px 0 #cdb998, 0 16px 26px rgba(0, 0, 0, .28);
-}
-.mint .mystery { color: var(--mint-ink); rotate: -6deg; }
-.cover .peek { position: absolute; z-index: 3; width: 25%; border-radius: 50%; border: 4px solid #ffd54a; box-shadow: 0 8px 16px rgba(0, 0, 0, .3); }
-.tile-body { flex: 1; display: flex; flex-direction: column; gap: 10px; padding: 20px 22px 24px; }
-.tile-body h3 { margin: 0; font: 700 1.65rem/1.15 var(--display); color: var(--brown); }
-.tagline { margin: 0; font: 600 1.05rem/1.35 var(--display); color: var(--red); }
+.tile-body { display: flex; flex-direction: column; justify-content: center; gap: 12px; padding: 32px 38px; }
+.tile-body h3 { margin: 0; font: 700 2.2rem/1.1 var(--display); color: var(--brown); }
+.tagline { margin: 0; font: 600 1.15rem/1.35 var(--display); color: var(--red); }
+.blurb { margin: 0; font: 600 1.05rem/1.55 var(--display); color: var(--muted); }
 .tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
 .tags li { font: 600 .86rem/1.2 var(--display); color: var(--muted); background: var(--paper-2); padding: 6px 10px; border-radius: 10px; }
-.tile-foot { margin-top: auto; padding-top: 8px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.where { margin: 0; font: 600 .86rem/1.35 var(--display); color: var(--muted); text-align: right; }
-.btn.locked { background: #c9b99f; color: #fff8ea; box-shadow: 0 5px 0 #a8977c; cursor: default; }
-.btn.locked:hover { filter: none; transform: none; }
-@media (prefers-color-scheme: dark) {
-  .tagline { color: #ff8197; }
-  .btn.locked { background: #5a4636; box-shadow: 0 5px 0 #3b2c20; border-color: #4d3b2c; }
-}
-@media (max-width: 960px) { .game-grid { grid-template-columns: 1fr 1fr; } .game-tile:first-child { grid-column: 1 / -1; } .game-tile:first-child .cover { aspect-ratio: 16 / 9; } }
-@media (max-width: 600px) {
-  .game-grid { grid-template-columns: 1fr; }
-  .game-tile:first-child .cover { aspect-ratio: 4 / 3; }
-  .game-tile.soon { flex-direction: row; }
-  .game-tile.soon .cover { width: 40%; aspect-ratio: auto; min-height: 150px; }
-  .game-tile.soon .tile-body { padding: 16px 16px 18px; }
-  .game-tile.soon h3 { font-size: 1.3rem; }
-  .game-tile.soon .tile-foot { display: none; }
+.tile-foot { margin-top: 8px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; }
+.where { margin: 0; font: 600 .92rem/1.4 var(--display); color: var(--muted); }
+@media (prefers-color-scheme: dark) { .tagline { color: #ff8197; } }
+@media (max-width: 760px) {
+  .game-tile { grid-template-columns: 1fr; }
+  .cover { min-height: 0; aspect-ratio: 4 / 3; }
+  .tile-body { padding: 24px 22px 26px; }
+  .tile-body h3 { font-size: 1.9rem; }
 }
 
 /* Inside Mahjong Mini: the ads as a gallery */
