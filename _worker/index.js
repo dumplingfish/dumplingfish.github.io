@@ -1,6 +1,6 @@
 // dumplingfish.com (wrangler.jsonc next to this file). Serves this repository's files, the same ones
 // GitHub Pages serves at dumplingfish.github.io, and adds what Pages cannot:
-// - www.dumplingfish.com sends visitors to dumplingfish.com;
+// - www.dumplingfish.com sends visitors to dumplingfish.com, and http to https;
 // - short addresses (/privacy, /terms, /support) serve their .html pages, which stay the main addresses;
 // - the old /mahjongnook-legal/ addresses (only ever used on dumplingfish.github.io) land on the pages here;
 // - a real 404 page, cache lifetimes and security headers.
@@ -21,7 +21,10 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    if (url.hostname === `www.${HOST}`) {
+    // www goes to the bare domain, and plain http to https, except app-ads.txt, which ad crawlers may
+    // read over either.
+    const toHttps = url.protocol === 'http:' && url.pathname !== '/app-ads.txt';
+    if (url.hostname === `www.${HOST}` || (url.hostname === HOST && toHttps)) {
       url.protocol = 'https:';
       url.hostname = HOST;
       return Response.redirect(url.toString(), 301);
