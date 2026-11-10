@@ -100,7 +100,7 @@ a:hover { color: var(--green-dark); }
 .topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 64px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--brown); text-decoration: none; font: 700 1.3rem/1 var(--display); letter-spacing: .2px; white-space: nowrap; }
 .brand:hover { color: var(--brown); }
-.brand img { width: 42px; height: 42px; transition: transform .25s ease; }
+.brand img { width: auto; height: 42px; transition: transform .25s ease; }
 .brand:hover img { transform: rotate(-8deg) scale(1.06); }
 .nav { display: flex; align-items: center; gap: 4px; }
 .nav a { font: 600 1rem/1 var(--display); color: var(--brown); text-decoration: none; padding: 10px 12px; border-radius: 999px; }
@@ -109,7 +109,7 @@ a:hover { color: var(--green-dark); }
 @media (max-width: 640px) {
   .nav .wide { display: none; }
   .brand { font-size: 1.15rem; }
-  .brand img { width: 36px; height: 36px; }
+  .brand img { width: auto; height: 36px; }
 }
 
 /* ---------- Buttons ---------- */
@@ -283,25 +283,25 @@ a:hover { color: var(--green-dark); }
   .tile-body { padding: 24px 22px 26px; }
 }
 
-/* Inside Mahjong Mini: the ads as a gallery */
-.ad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.ad {
+/* Inside Mahjong Mini: the ads as a gallery. Never name these "ad": ad blockers hide .ad-grid and the like. */
+.showcase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.showcase {
   display: grid; grid-template-columns: 1fr 180px; align-items: center; gap: 18px;
   min-height: 440px; padding: 30px 30px; border-radius: 28px;
   box-shadow: 0 7px 0 rgba(43, 31, 22, .14), 0 20px 34px var(--shadow);
 }
-.ad .kicker { margin-bottom: 10px; }
-.ad h3 { margin: 0 0 14px; font-size: clamp(1.6rem, 2.5vw, 2.2rem); }
-.ad p { margin: 0; font: 600 1.06rem/1.45 var(--display); }
-.ad .phone { justify-self: center; width: 180px; }
-.ad .float { z-index: 2; }
-.ad .avatar { width: 74px; height: 74px; border-width: 4px; }
-.ad .tileart { width: 62px; }
-@media (max-width: 1000px) { .ad { grid-template-columns: 1fr 150px; padding: 26px 22px; } .ad .phone { width: 150px; } }
-@media (max-width: 760px) { .ad-grid { grid-template-columns: 1fr; } }
+.showcase .kicker { margin-bottom: 10px; }
+.showcase h3 { margin: 0 0 14px; font-size: clamp(1.6rem, 2.5vw, 2.2rem); }
+.showcase p { margin: 0; font: 600 1.06rem/1.45 var(--display); }
+.showcase .phone { justify-self: center; width: 180px; }
+.showcase .float { z-index: 2; }
+.showcase .avatar { width: 74px; height: 74px; border-width: 4px; }
+.showcase .tileart { width: 62px; }
+@media (max-width: 1000px) { .showcase { grid-template-columns: 1fr 150px; padding: 26px 22px; } .showcase .phone { width: 150px; } }
+@media (max-width: 760px) { .showcase-grid { grid-template-columns: 1fr; } }
 @media (max-width: 480px) {
-  .ad { grid-template-columns: 1fr; text-align: center; gap: 22px; min-height: 0; }
-  .ad .phone { width: 170px; }
+  .showcase { grid-template-columns: 1fr; text-align: center; gap: 22px; min-height: 0; }
+  .showcase .phone { width: 170px; }
 }
 
 /* About the studio */
@@ -311,10 +311,10 @@ a:hover { color: var(--green-dark); }
   padding: 28px 34px; background: var(--paper); border-radius: 28px;
   box-shadow: 0 7px 0 var(--lip), 0 20px 34px var(--shadow);
 }
-.about-card .mark { width: 132px; height: 132px; }
+.about-card .mark { width: 156px; height: auto; }
 .about-card h2 { margin: 0 0 8px; font: 700 1.9rem/1.15 var(--display); color: var(--brown); }
 .about-card p { margin: 0; font: 600 1.08rem/1.55 var(--display); color: var(--muted); }
-@media (max-width: 640px) { .about-card { grid-template-columns: 1fr; justify-items: center; text-align: center; padding: 24px 22px; } .about-card .mark { width: 100px; height: 100px; } }
+@media (max-width: 640px) { .about-card { grid-template-columns: 1fr; justify-items: center; text-align: center; padding: 24px 22px; } .about-card .mark { width: 124px; height: auto; } }
 
 /* ---------- Home: help ---------- */
 .help .wrap { padding-top: 66px; padding-bottom: 80px; }
