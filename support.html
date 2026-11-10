@@ -4,74 +4,88 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mahjong Mini — Support</title>
+  <link rel="canonical" href="https://dumplingfish.com/support.html">
+  <meta name="theme-color" content="#f9c4cd">
+  <link rel="icon" href="assets/img/mark.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/mark-48.png" sizes="48x48" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* This page only: a friendlier look on the site's jade colours (the legal pages keep theirs). */
-    header.site { padding: 36px 20px 64px; }
-    header.site h1 { font-size: 2rem; }
-    .hero {
-      position: relative;
-      margin: -44px 0 22px;
-      text-align: center;
-      padding: 30px 26px 26px;
-      border-radius: 18px;
-      box-shadow: 0 10px 28px rgba(31, 107, 84, .12);
-    }
+    /* This page only: its cards sit on the page, over the pink band, rather than on one sheet. */
+    body.reading.support main { max-width: 900px; margin: -60px auto 64px; padding: 0 20px; background: none; box-shadow: none; }
+    body.reading.support .card { background: var(--paper); border-radius: 24px; padding: 24px 26px; margin: 0 0 18px; box-shadow: 0 2px 0 var(--line), 0 14px 30px var(--shadow); }
+    .hero { text-align: center; padding: 30px 26px 28px; }
     .tile {
       display: inline-flex; align-items: center; justify-content: center;
-      width: 60px; height: 76px; margin-bottom: 10px;
-      background: #fffdf6; border: 2px solid var(--rule); border-radius: 12px;
-      box-shadow: 0 4px 0 #d8e3de;
-      font-size: 2.3rem; color: #c8382e; font-weight: 700;
-      transform: rotate(-4deg);
+      width: 64px; height: 82px; margin-bottom: 12px;
+      background: #fffdf6; border: 3px solid #e2d2b6; border-radius: 12px;
+      box-shadow: 0 5px 0 #d9c7a6;
+      font-size: 2.5rem; color: #d11c3c; font-weight: 700;
+      transform: rotate(-5deg);
     }
-    .hero h2 { border: 0; margin: 4px 0 6px; padding: 0; font-size: 1.5rem; }
-    .hero p { margin: 6px auto; max-width: 520px; color: var(--muted); }
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .grid .card { margin: 0; }
-    .card h3 { margin: 0 0 8px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; }
+    body.reading .hero h2 { color: var(--brown); margin: 4px 0 8px; font-size: 1.7rem; }
+    .hero p { margin: 6px auto; max-width: 540px; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+    body.reading.support .grid .card { margin: 0; }
+    body.reading .card h3 { margin: 0 0 8px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; }
     .card h3 .icon {
       display: inline-flex; align-items: center; justify-content: center;
-      width: 30px; height: 30px; border-radius: 50%;
-      background: #e6f3ee; color: var(--jade-dark); font-size: 1rem;
+      width: 34px; height: 34px; border-radius: 50%;
+      background: var(--pink-glow); color: var(--pink-ink); font-size: 1rem;
     }
     .button {
-      display: inline-block; margin-top: 8px; padding: 11px 22px;
-      background: var(--jade); color: #fff; border-radius: 999px;
-      font-weight: 700; text-decoration: none;
-      box-shadow: 0 3px 0 var(--jade-dark);
+      display: inline-flex; margin-top: 10px; padding: 12px 22px;
+      font: 700 1.02rem/1 var(--display); color: #fff; text-decoration: none;
+      background: var(--green-bright); border: 3px solid #fff8ea; border-radius: 999px;
+      box-shadow: 0 4px 0 var(--green-dark);
       transition: transform .08s ease, box-shadow .08s ease;
     }
-    .button:hover { background: var(--jade-dark); }
-    .button:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--jade-dark); }
-    .button.soft { background: #e6f3ee; color: var(--jade-dark); box-shadow: 0 3px 0 #cfe5dc; }
-    .button.soft:hover { background: #d8ece4; }
+    .button:hover { color: #fff; filter: brightness(1.05); }
+    .button:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--green-dark); }
+    .button.soft { background: var(--mint-glow); color: var(--mint-ink); box-shadow: 0 4px 0 var(--mint); }
+    .button.soft:hover { color: var(--mint-ink); }
     .email { display: block; margin-top: 10px; font-size: .92rem; color: var(--muted); word-break: break-all; }
     .tips { margin: 6px 0 0; padding: 0; list-style: none; }
-    .tips li { padding-left: 26px; position: relative; margin: 8px 0; }
+    body.reading .tips li { padding-left: 28px; position: relative; margin: 8px 0; }
     .tips li::before {
       content: "✓"; position: absolute; left: 0; top: 0;
-      color: var(--jade); font-weight: 700;
+      color: var(--green); font-weight: 700;
     }
-    .privacy { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 18px; }
+    .privacy { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
     .privacy p { margin: 4px 0 0; color: var(--muted); }
-    footer.site { text-align: center; }
-    footer.site strong { color: var(--ink); }
+    .privacy .button { flex: none; white-space: nowrap; }
     @media (max-width: 620px) {
       .grid { grid-template-columns: 1fr; }
       .privacy { flex-direction: column; align-items: flex-start; }
-      header.site h1 { font-size: 1.7rem; }
     }
   </style>
 </head>
-<body>
-  <header class="site">
+<body class="reading support">
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="topbar">
     <div class="wrap">
-      <div class="brand">Mahjong Mini</div>
-      <h1>Support</h1>
-      <div class="toplinks"><a href="index.html">Home</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></div>
+      <a class="brand" href="./"><img src="assets/img/mark.svg" alt="" width="42" height="42"><span>Dumpling Fish</span></a>
+      <nav class="nav" aria-label="Main">
+        <a class="wide" href="./#games">Games</a>
+        <a class="wide" href="./#studio">Studio</a>
+        <a href="support.html">Support</a>
+        <a class="btn" href="https://play.dumplingfish.com/">Play</a>
+      </nav>
     </div>
   </header>
+
+  <section class="band pink page-head" aria-labelledby="page-title">
+    <div class="wrap">
+      <p class="crumb">Mahjong Mini</p>
+      <h1 id="page-title" class="shout on-white">Support</h1>
+      <nav class="toplinks" aria-label="Related pages"><a href="./">Home</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></nav>
+      <img class="float avatar bob" src="assets/img/fruit-strawberry.webp" alt="" width="128" height="128" style="width: 96px; height: 96px; top: 34px; right: 16%">
+      <img class="float tileart bob late" src="assets/img/tile-red.webp" alt="" width="200" height="279" style="--r: 10deg; width: 92px; top: 52px; right: 5%">
+    </div>
+    <svg class="wave bottom" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path class="cream" d="M0 20 C240 42 480 0 720 18 C960 36 1200 2 1440 18 V40 H0 Z"/></svg>
+  </section>
+  <div id="content"></div>
   <main>
     <div class="card hero">
       <div class="tile" aria-hidden="true">中</div>
@@ -106,9 +120,41 @@
       <a class="button soft" href="privacy.html">View our Privacy Policy</a>
     </div>
   </main>
-  <footer class="site">
-    <strong>Mahjong Mini</strong> by dumplingfish<br>
-    &copy; 2026 dumplingfish. All rights reserved.
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <a class="brand" href="./"><img src="assets/img/mark.svg" alt="" width="42" height="42"><span>Dumpling Fish Games</span></a>
+          <p>Cosy games, made to share. A tiny independent studio.</p>
+        </div>
+        <nav aria-labelledby="foot-games">
+          <h2 id="foot-games">Games</h2>
+          <ul>
+            <li><a href="https://play.dumplingfish.com/mahjong-mini/">Mahjong Mini</a></li>
+            <li><a href="https://play.dumplingfish.com/">All games</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="foot-help">
+          <h2 id="foot-help">Help</h2>
+          <ul>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="delete-account.html">Delete your account</a></li>
+            <li><a href="mailto:dumplingfishgames@gmail.com">Email us</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="foot-legal">
+          <h2 id="foot-legal">Legal</h2>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="fineprint">
+        <span>&copy; 2026 dumplingfish. All rights reserved.</span>
+        <span class="fishes" aria-hidden="true"><img src="assets/img/fish-sardine.webp" alt="" width="128" height="128" loading="lazy"><img src="assets/img/fish-starfish.webp" alt="" width="128" height="128" loading="lazy"><img src="assets/img/fish-hammerhead.webp" alt="" width="128" height="128" loading="lazy"><img src="assets/img/fish-cat.webp" alt="" width="128" height="128" loading="lazy"></span>
+      </div>
+    </div>
   </footer>
 </body>
 </html>

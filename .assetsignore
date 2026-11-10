@@ -1,0 +1,7 @@
+# Not part of the site at dumplingfish.com (the Worker in _worker/ serves the rest of this folder).
+.git
+.gitignore
+.assetsignore
+_worker
+# Redirect stubs for dumplingfish.github.io; the Worker redirects these addresses itself.
+mahjongnook-legal

@@ -4,28 +4,51 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mahjong Mini — Delete Your Account</title>
+  <link rel="canonical" href="https://dumplingfish.com/delete-account.html">
+  <meta name="theme-color" content="#ffc832">
+  <link rel="icon" href="assets/img/mark.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/mark-48.png" sizes="48x48" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
   <style>
     .steps { margin: 6px 0 0 1.2em; padding: 0; }
     .steps li { margin: 8px 0; }
     .button {
-      display: inline-block; margin-top: 8px; padding: 11px 22px;
-      background: var(--jade); color: #fff; border-radius: 999px;
-      font-weight: 700; text-decoration: none;
-      box-shadow: 0 3px 0 var(--jade-dark);
+      display: inline-flex; margin-top: 10px; padding: 12px 22px;
+      font: 700 1.02rem/1 var(--display); color: #fff; text-decoration: none;
+      background: var(--green-bright); border: 3px solid #fff8ea; border-radius: 999px;
+      box-shadow: 0 4px 0 var(--green-dark);
     }
-    .button:hover { background: var(--jade-dark); }
+    .button:hover { color: #fff; filter: brightness(1.05); }
     .email { display: block; margin-top: 10px; font-size: .92rem; color: var(--muted); word-break: break-all; }
   </style>
 </head>
-<body>
-  <header class="site">
+<body class="reading">
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="topbar">
     <div class="wrap">
-      <div class="brand">Mahjong Mini</div>
-      <h1>Delete Your Account</h1>
-      <div class="toplinks"><a href="index.html">Home</a><a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a></div>
+      <a class="brand" href="./"><img src="assets/img/mark.svg" alt="" width="42" height="42"><span>Dumpling Fish</span></a>
+      <nav class="nav" aria-label="Main">
+        <a class="wide" href="./#games">Games</a>
+        <a class="wide" href="./#studio">Studio</a>
+        <a href="support.html">Support</a>
+        <a class="btn" href="https://play.dumplingfish.com/">Play</a>
+      </nav>
     </div>
   </header>
+
+  <section class="band sun page-head" aria-labelledby="page-title">
+    <div class="wrap">
+      <p class="crumb">Mahjong Mini</p>
+      <h1 id="page-title" class="shout cream">Delete Your Account</h1>
+      <nav class="toplinks" aria-label="Related pages"><a href="./">Home</a><a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a></nav>
+      <img class="float tileart bob" src="assets/img/tile-wan7.webp" alt="" width="200" height="279" style="--r: -9deg; width: 88px; top: 32px; right: 15%">
+      <img class="float bob late" src="assets/img/coin.webp" alt="" style="width: 62px; top: 92px; right: 6%">
+    </div>
+    <svg class="wave bottom" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path class="cream" d="M0 20 C240 42 480 0 720 18 C960 36 1200 2 1440 18 V40 H0 Z"/></svg>
+  </section>
+  <div id="content"></div>
   <main>
     <div class="card">
       <p>How to delete your <strong>Mahjong Mini</strong> account (made by dumplingfish) and the data that goes
@@ -71,9 +94,41 @@
       <a href="privacy.html">Privacy Policy</a>.</p>
     </div>
   </main>
-  <footer class="site">
-    <strong>Mahjong Mini</strong> by dumplingfish<br>
-    &copy; 2026 dumplingfish. All rights reserved.
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <a class="brand" href="./"><img src="assets/img/mark.svg" alt="" width="42" height="42"><span>Dumpling Fish Games</span></a>
+          <p>Cosy games, made to share. A tiny independent studio.</p>
+        </div>
+        <nav aria-labelledby="foot-games">
+          <h2 id="foot-games">Games</h2>
+          <ul>
+            <li><a href="https://play.dumplingfish.com/mahjong-mini/">Mahjong Mini</a></li>
+            <li><a href="https://play.dumplingfish.com/">All games</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="foot-help">
+          <h2 id="foot-help">Help</h2>
+          <ul>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="delete-account.html">Delete your account</a></li>
+            <li><a href="mailto:dumplingfishgames@gmail.com">Email us</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="foot-legal">
+          <h2 id="foot-legal">Legal</h2>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="fineprint">
+        <span>&copy; 2026 dumplingfish. All rights reserved.</span>
+        <span class="fishes" aria-hidden="true"><img src="assets/img/fish-sardine.webp" alt="" width="128" height="128" loading="lazy"><img src="assets/img/fish-starfish.webp" alt="" width="128" height="128" loading="lazy"><img src="assets/img/fish-hammerhead.webp" alt="" width="128" height="128" loading="lazy"><img src="assets/img/fish-cat.webp" alt="" width="128" height="128" loading="lazy"></span>
+      </div>
+    </div>
   </footer>
 </body>
 </html>

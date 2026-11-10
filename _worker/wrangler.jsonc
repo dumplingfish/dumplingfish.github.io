@@ -1,0 +1,36 @@
+// dumplingfish.com, the Dumpling Fish studio site: this repository's files, served by a Worker with
+// static assets on the domain's two addresses. GitHub Pages keeps serving the same files at
+// https://dumplingfish.github.io (it skips folders that start with "_", so this folder is not published).
+//
+// Deploy (from this folder, or with --config from anywhere):
+//   npx wrangler@4 deploy --config _worker/wrangler.jsonc
+// Roll back:
+//   npx wrangler@4 rollback --config _worker/wrangler.jsonc
+// Local preview: `wrangler dev` with this file reloads in a loop, because wrangler keeps its state in
+// _worker/.wrangler, inside the folder it serves. Use a copy of this file saved outside the repository,
+// with "main" and "assets.directory" as absolute paths (and no "routes").
+// Static assets: https://developers.cloudflare.com/workers/static-assets/
+{
+  "name": "dumplingfish-site",
+  "main": "index.js",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    // The repository root. ../.assetsignore keeps .git, this folder and the old redirect stubs out.
+    "directory": "..",
+    "binding": "ASSETS",
+    // index.js answers every request (www redirect, short addresses, 404 page, headers).
+    "run_worker_first": true,
+    // Pages keep their .html addresses (the ones the stores and the game already use): no redirects.
+    "html_handling": "none",
+    "not_found_handling": "none"
+  },
+  // Cloudflare makes the DNS records and certificates for custom domains itself:
+  // https://developers.cloudflare.com/workers/configuration/routing/custom-domains/
+  "routes": [
+    { "pattern": "dumplingfish.com", "custom_domain": true },
+    { "pattern": "www.dumplingfish.com", "custom_domain": true }
+  ],
+  "workers_dev": false,
+  "preview_urls": false,
+  "observability": { "enabled": true }
+}
