@@ -1,4 +1,4 @@
-// dumplingfish.com, the Dumpling Fish studio site: this repository's files, served by a Worker with
+// dumplingfish.com, the Dumplingfish studio site: this repository's files, served by a Worker with
 // static assets on the domain's two addresses. GitHub Pages keeps serving the same files at
 // https://dumplingfish.github.io (it skips folders that start with "_", so this folder is not published).
 //

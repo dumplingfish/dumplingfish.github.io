@@ -1,4 +1,4 @@
-/* Dumpling Fish Games: the studio site's look, shared by every page.
+/* Dumplingfish Games: the studio site's look, shared by every page.
    Mahjong Mini's cream table, green felt and brown ink, Fredoka for headings, and the bright
    palettes of its ads (mint, pink, night, sunshine) as section bands. */
 
@@ -216,7 +216,7 @@ a:hover { color: var(--green-dark); }
 .nav a.btn .icon { width: 15px; height: 15px; }
 
 .studio-hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 24px; min-height: 540px; padding-top: 44px; padding-bottom: 72px; }
-.studio-hero h1 { margin: 0 0 12px; font-size: clamp(3.1rem, 7.6vw, 5.6rem); }
+.studio-hero h1 { margin: 0 0 12px; font-size: clamp(2.6rem, 7.4vw, 5.6rem); }
 .motto { margin: 0 0 16px; font: 700 clamp(1.45rem, 3vw, 2.1rem)/1.2 var(--display); color: var(--gold); text-shadow: 0 3px 0 rgba(43, 31, 22, .35); }
 .studio-hero .lead { margin: 0 0 28px; max-width: 31em; font: 600 1.15rem/1.55 var(--display); color: #e6f7ec; }
 
