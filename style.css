@@ -133,6 +133,8 @@ a:hover { color: var(--green-dark); }
 .btn.navy { background: var(--navy); box-shadow: 0 5px 0 #122a4b, 0 10px 22px rgba(29, 63, 110, .25); }
 .btn.gold { background: var(--gold); color: #4a3426; box-shadow: 0 5px 0 #d99a12, 0 10px 22px rgba(217, 154, 18, .25); }
 .btn.gold:hover { color: #4a3426; }
+.btn.discord { background: #5865f2; box-shadow: 0 5px 0 #3b44b5, 0 10px 22px rgba(88, 101, 242, .25); }
+.btn .glyph { width: 22px; height: 22px; flex: none; }
 
 /* ---------- Bands (the ads' glowing backgrounds) ---------- */
 .band { position: relative; overflow: hidden; isolation: isolate; }
@@ -230,6 +232,11 @@ a:hover { color: var(--green-dark); }
 .route { display: inline-flex; align-items: center; gap: 10px; color: #fff8ea; text-decoration: none; font: 700 1.2rem/1.2 var(--display); }
 .route small { display: block; font: 600 .82rem/1.2 var(--display); color: #bfe9cf; letter-spacing: .4px; }
 .route:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+/* Where else the game is: the app and the Discord Activity, as small pills under the tray */
+.also { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; margin: 18px 0 0; font: 600 .95rem/1.2 var(--display); color: #bfe9cf; }
+.also .pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px 8px 12px; border-radius: 999px; background: rgba(255, 248, 234, .14); border: 2px solid rgba(255, 248, 234, .55); color: #fff8ea; text-decoration: none; font: 700 1rem/1 var(--display); }
+.also .pill:hover { background: rgba(255, 248, 234, .26); color: #fff; }
+.also .glyph { width: 20px; height: 20px; flex: none; }
 
 .studio-art { position: relative; height: 470px; }
 .studio-art .halo { position: absolute; left: 50%; top: 50%; width: 440px; height: 440px; translate: -50% -50%; border-radius: 50%; background: radial-gradient(circle, rgba(255, 236, 160, .5), rgba(255, 236, 160, 0) 68%); }
@@ -245,6 +252,7 @@ a:hover { color: var(--green-dark); }
   .studio-art .avatar { width: 58px; height: 58px; border-width: 4px; }
   .studio-art .tileart { width: 52px; }
   .playroute { flex-direction: column; border-radius: 30px; padding: 18px 22px; }
+  .also { justify-content: center; }
 }
 
 /* ---------- Home: shelves ---------- */
